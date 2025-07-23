@@ -2,7 +2,7 @@ import telebot
 import time
 import threading
 
-TOKEN = '7553523292:AAE68iKAw5XEjO4rGiR6YbgbJoCscYfR-DM'
+TOKEN = '8177802068:AAGV1Tcsmcp5sWFoSm8vevEvbjLxaLYsZUU-DM'
 CHAT_ID = '1856443989'
 
 bot = telebot.TeleBot(TOKEN)
