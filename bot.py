@@ -1,5 +1,6 @@
 import telebot
 import time
+import threading
 
 TOKEN = '7553523292:AAE68iKAw5XEjO4rGiR6YbgbJoCscYfR-DM'
 CHAT_ID = '1856443989'
@@ -21,4 +22,10 @@ def send_signals():
         time.sleep(60 * 60 * 3)  # ogni 3 ore
 
 if __name__ == '__main__':
-    send_signals()
+    # Avvia il thread per inviare i segnali
+    signal_thread = threading.Thread(target=send_signals)
+    signal_thread.daemon = True
+    signal_thread.start()
+    
+    # Avvia il polling per ascoltare i comandi
+    bot.infinity_polling()
